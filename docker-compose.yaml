@@ -11,20 +11,20 @@ services:
     - source: mongodb
       target: /data/db
       type: volume
-    networks:
-    - roboshop
+    # networks:
+    # - roboshop
 
   catalogue:
     image: catalogue:1
     container_name: catalogue
-    networks:
-    - roboshop
+    # networks:
+    # - roboshop
     depends_on:
     - mongodb
   web:
     image: web:v1
-    networks:
-    - roboshop
+    # networks:
+    # - roboshop
     ports:
     - "80:80"
     depends_on:
