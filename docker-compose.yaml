@@ -23,8 +23,7 @@ services:
     - catalogue
     - cart
     - user
-    - shipping
-    - payment
+  
   
   redis:
     image: redis
