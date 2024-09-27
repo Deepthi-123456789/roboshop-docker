@@ -26,16 +26,24 @@ services:
     - shipping
     - payment
   
-  redis :
+   redis:
+    image: redis
+    container_name: redis
+    volumes:
+    - source: redis
+      target: /data
+      type: volume
 
   user:
-    image: user:1
+    image: user:v1
+    container_name: user
     depends_on:
     - redis
     - mongodb
 
   cart:
-    image: cart:1
+    image: cart:v1
+    container_name: cart
     depends_on:
     - redis
     - catalogue
