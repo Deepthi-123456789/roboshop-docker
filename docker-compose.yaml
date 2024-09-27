@@ -21,3 +21,9 @@ services:
     - "80:80"
     depends_on:
     - catalogue
+    - cart
+    - user
+    - shipping
+    - payment
+  user:
+    image: user:1
